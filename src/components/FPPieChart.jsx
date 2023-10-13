@@ -1,32 +1,67 @@
 import React from "react";
-import { PieChart, Pie, Legend } from "recharts";
+import { PieChart, Pie, ResponsiveContainer, Cell, Label } from "recharts";
 
 const FPPieChart = () => {
   const data = [
-    { value: 400, fill: "#0088FE" },
-    { value: 800, fill: "#00C49F" },
-    { value: 300, fill: "#333" },
+    { name: "Active Campagins", value: 30 },
+    { name: "Inactive Campagins", value: 50 },
+    { name: "ICPs with no campagins", value: 50 },
   ];
+
+  const COLORS = ["#e553ab", "#f4ecff", "#7c00ef", "#FF8042"];
+
+  const CustomLabel = ({ viewBox, value, labelText }) => {
+    const { cx, cy } = viewBox;
+    return (
+      <g>
+        <text
+          x={cx}
+          y={cy}
+          className="recharts-text recharts-label"
+          textAnchor="middle"
+          dominantBaseline="central"
+          alignmentBaseline="middle"
+          fill="#0088FE"
+          fontSize="26"
+          fontWeight="600"
+        >
+          {value}%
+        </text>
+        <text
+          x={cx}
+          y={cy + 20}
+          className="recharts-text recharts-label "
+          textAnchor="middle"
+          dominantBaseline="central"
+          alignmentBaseline="middle"
+          fontSize="15" 
+        >
+          {labelText}
+        </text>
+      </g>
+    );
+  };
   return (
-    <div>
-      <PieChart width={800} height={400}>
-        <Legend
-          height={36}
-          iconType="none"
-          layout="vertical"
-          verticalAlign="middle"
-        />
-        <Pie
-          data={data}
-          cx={120}
-          cy={200}
-          innerRadius={60}
-          outerRadius={80}
-          fill="#8884d8"
-          paddingAngle={0}
-          dataKey="value"
-        ></Pie>
-      </PieChart>
+    <div className="flex justify-center items-center w-full h-[18.7em] mt-5 bg-white rounded-lg">
+      <ResponsiveContainer>
+        <PieChart>
+          <Pie data={data} dataKey="value" innerRadius={60} outerRadius={100}>
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                strokeWidth={index === 1 ? 10 : index === 2 ? 6 : 1}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+            <Label
+              content={
+                <CustomLabel value={65} labelText="Total customers" />
+              }
+              position="center"
+            />
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
     </div>
   );
 };

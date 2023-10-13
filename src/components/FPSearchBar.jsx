@@ -2,7 +2,7 @@ import React from "react";
 import { PiMagnifyingGlassBold } from "react-icons/pi";
 import { InputAdornment, TextField } from "@mui/material";
 
-const FPSearchBar = () => {
+const FPSearchBar = ({ color }) => {
   const handleSearch = (event) => {
     // const query = event.target.value;
     // onSearch(query);
@@ -12,7 +12,7 @@ const FPSearchBar = () => {
       <TextField
         placeholder="Search"
         sx={{
-          backgroundColor: "white",
+          backgroundColor: color ? color : "white",
           "& .MuiInputBase-input": {
             border: "none",
             padding: "0.3em",

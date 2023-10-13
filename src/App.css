@@ -40,3 +40,20 @@
     transform: rotate(360deg);
   }
 }
+/* Hide both vertical and horizontal scrollbar */
+::-webkit-scrollbar {
+  width: 5px; /* Adjust the width for the vertical scrollbar */
+  height: 5px; /* Adjust the height for the horizontal scrollbar */
+}
+
+/* Style the vertical scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: #7c00ef; /* Adjust the color of the thumb */
+  border-radius: 10px; /* Adjust the border radius for rounded thumb */
+}
+
+/* Style the horizontal scrollbar thumb */
+::-webkit-scrollbar-thumb:horizontal {
+  background: #7c00ef; /* Adjust the color of the thumb */
+  border-radius: 3px; /* Adjust the border radius for the horizontal thumb */
+}

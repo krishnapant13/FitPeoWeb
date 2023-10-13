@@ -13,31 +13,32 @@ import { IoWalletSharp } from "react-icons/io5";
 import { BsHandbag } from "react-icons/bs";
 import FPBarChart from "./FPBarChart.jsx";
 import FPPieChart from "./FPPieChart.jsx";
+import FPTable from "./FPTable.jsx";
 
 const FitPeoWebPage = () => {
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="w-full flex  justify-center items-center">
       <FPSideBar />
-      <div className="md:w-[82%] w-full h-screen bg-[#f5f6f8] px-6">
+      <div className="md:w-[82%] w-full md:h-screen bg-[#f5f6f8] px-6 overflow-scroll">
         <FPHeader />
-        <Grid container spacing={4} className="pt-[2em]">
+        <Grid container spacing={4} className="pt-[1em]">
           <Grid item xs={12} sm={12} md={3} xl={3}>
             <FPDataCard
-              color={"#ff0000"}
+              color={"#00bb46"}
               heading="Earning"
               price={198}
               data="37.8"
               mainIcon={
-                <PiCurrencyCircleDollarBold size={40} color="#ff0000" />
+                <PiCurrencyCircleDollarBold size={40} color="#00bb46" />
               }
-              dataIcon={<AiOutlineArrowUp size={10} color="#ff0000" />}
+              dataIcon={<AiOutlineArrowUp size={10} color="#00bb46" />}
             />
           </Grid>
           <Grid item xs={12} sm={12} md={3} xl={3}>
             <FPDataCard
               color={"#790ca2"}
               heading="Orders"
-              price={198}
+              price={2.4}
               data="2"
               mainIcon={<AiOutlineProfile size={40} color="#790ca2" />}
               dataIcon={<AiOutlineArrowDown size={10} color="#790ca2" />}
@@ -47,7 +48,7 @@ const FitPeoWebPage = () => {
             <FPDataCard
               color={"#0f7794"}
               heading="Balance"
-              price={198}
+              price={2.4}
               data="2"
               mainIcon={<IoWalletSharp size={40} color="#0f7794" />}
               dataIcon={<AiOutlineArrowDown size={10} color="#0f7794" />}
@@ -57,7 +58,7 @@ const FitPeoWebPage = () => {
             <FPDataCard
               color={"#e553ab"}
               heading="Total Sales"
-              price={198}
+              price={89}
               data="11"
               mainIcon={<BsHandbag size={40} color="#e553ab" />}
               dataIcon={<AiOutlineArrowUp size={10} color="#e553ab" />}
@@ -72,6 +73,9 @@ const FitPeoWebPage = () => {
             <FPPieChart />
           </Grid>
         </Grid>
+        <div className="mt-3">
+          <FPTable />
+        </div>
       </div>
     </div>
   );
