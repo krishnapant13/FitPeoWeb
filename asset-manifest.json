@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FitPeoWeb/static/css/main.78eaa9d0.css",
+    "main.js": "/FitPeoWeb/static/js/main.1d5863cf.js",
+    "static/js/787.9af46eb9.chunk.js": "/FitPeoWeb/static/js/787.9af46eb9.chunk.js",
+    "index.html": "/FitPeoWeb/index.html",
+    "main.78eaa9d0.css.map": "/FitPeoWeb/static/css/main.78eaa9d0.css.map",
+    "main.1d5863cf.js.map": "/FitPeoWeb/static/js/main.1d5863cf.js.map",
+    "787.9af46eb9.chunk.js.map": "/FitPeoWeb/static/js/787.9af46eb9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78eaa9d0.css",
+    "static/js/main.1d5863cf.js"
+  ]
+}
